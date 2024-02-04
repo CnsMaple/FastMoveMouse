@@ -1,0 +1,55 @@
+---
+# clang-format version : 16.0.2
+# 从不用tab，使用空格
+UseTab: Never
+# 所有的括号都展开到下一行
+BreakBeforeBraces: Allman
+# 行的宽限制
+ColumnLimit: 100
+# 参数对齐
+AlignAfterOpenBracket: Align
+# 赋值数组左对齐
+AlignArrayOfStructures: Left 
+# 下面两行要搭配使用
+# 换行运算符对齐
+AlignOperands: AlignAfterOperator
+BreakBeforeBinaryOperators: NonAssignment
+# 注释对齐
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 0
+# 每个参数占一行,下面两行都是这个意思，一个是声明的一个是用的
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+# 作用域东西太少也不用合并,下面两行都是这个意思
+AllowShortFunctionsOnASingleLine: None
+AllowShortLambdasOnASingleLine: None 
+#  这个是中继返回值的
+AlwaysBreakAfterReturnType : None
+# template分行
+AlwaysBreakTemplateDeclarations: Yes
+# 参行分行，下面两行都是这个意思
+BinPackArguments: false 
+BinPackParameters: false
+# 要看官网了
+BreakAfterAttributes: Always
+# 初始化的时候，值的左右添加空格
+Cpp11BracedListStyle: false 
+# class 中的 public private 等等将有缩进
+IndentAccessModifiers: true 
+# case 将有缩进
+IndentCaseLabels: true 
+# 头文件的等号将有缩进
+IndentPPDirectives: BeforeHash 
+# requires 分行
+IndentRequiresClause: false 
+# 缩进的宽度
+IndentWidth: 4
+# namespace 将有缩进
+NamespaceIndentation: All
+# obc block 将有缩进
+ObjCBlockIndentWidth: 4
+# constructor init 将单独一行
+# PackConstructorInitializers: Never
+# 不同块之间添加一行空白行
+SeparateDefinitionBlocks: Always 

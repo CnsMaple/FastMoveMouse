@@ -82,19 +82,19 @@ void Config::generateConfig(bool generateNew)
     // 判断config.json是否存在
     QFile file(path);
     QMap<QString, QList<int>> rawJsonMap = {
-        {"openJumpMouse",    { 162, 160 }     },
-        { "exitJumpMouse",   { 27, 162 }      },
-        { "mouseLeft",       { 78, 162 }      },
-        { "mouseMiddle",     { 77, 162 }      },
-        { "mouseRight",      { 188, 162 }     },
-        { "mouseLongLeft",   { 78, 162, 160 } },
-        { "mouseLongMiddle", { 77, 162, 160 } },
-        { "mouseLongRight",  { 188, 162, 160 }},
-        { "mouseMoveUp",     { 75, 162 }      },
-        { "mouseMoveDown",   { 74, 162 }      },
-        { "mouseMoveLeft",   { 72, 162 }      },
-        { "mouseMoveRight",  { 76, 162 }      },
-        { "mouseMoveAddSpeed",  { 164, 162 }      },
+        {"openJumpMouse",    { 164, 160 }     },
+        { "exitJumpMouse",   { 27, 164 }      },
+        { "mouseLeft",       { 78, 164 }      },
+        { "mouseMiddle",     { 77, 164 }      },
+        { "mouseRight",      { 188, 164 }     },
+        { "mouseLongLeft",   { 78, 164, 160 } },
+        { "mouseLongMiddle", { 77, 164, 160 } },
+        { "mouseLongRight",  { 188, 164, 160 }},
+        { "mouseMoveUp",     { 75, 164 }      },
+        { "mouseMoveDown",   { 74, 164 }      },
+        { "mouseMoveLeft",   { 72, 164 }      },
+        { "mouseMoveRight",  { 76, 164 }      },
+        { "mouseMoveAddSpeed",  { 9, 164 }      },
     };
 
     QMap<QString, int> rawJsonMapInt = {

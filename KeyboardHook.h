@@ -244,6 +244,8 @@ class KeyboardHook : public QObject
 
         QList<bool> keyStatusList = QList<bool>(256, false);
 
+        // FIX: 如果只是按下了一个按键，但是还是让这个按键失去功能了
+        // FIX: 按键设置的时候，可能会触发一个卡住变量的问题
         static LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
         {
             if (nCode == HC_ACTION)

@@ -1,10 +1,6 @@
 # Rust build output
 /target
 
-# Local cargo configuration. May pin the GNU target on machines without MSVC;
-# commit-worthy settings belong in .cargo/config.toml.example.
-/.cargo/config.toml
-
 # Editors and OS cruft
 CMakeLists.txt.user
 *.swp

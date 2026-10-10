@@ -1,0 +1,11 @@
+# MinGW-w64 is required for this project.
+#
+# This pins the toolchain for everyone who builds the repository, so the target
+# and the host agree on GNU. Without it, a machine whose default toolchain is
+# MSVC would compile build scripts for the MSVC host and fail to link, even
+# though .cargo/config.toml pins the target.
+#
+# Run "rustup toolchain install stable-x86_64-pc-windows-gnu" if it is missing;
+# rustup installs it automatically on the next cargo invocation.
+[toolchain]
+channel = "stable-x86_64-pc-windows-gnu"

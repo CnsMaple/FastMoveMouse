@@ -13,18 +13,34 @@ cargo build --release
 Output: `target/x86_64-pc-windows-gnu/release/fastmovemouse.exe`
 (~600 KB, self-contained, no runtime DLLs).
 
-### Toolchain note
+### Toolchain
 
-`.cargo/config.toml` pins the `x86_64-pc-windows-gnu` target with `gcc` as the
-linker, because this machine has MinGW-w64 but no MSVC build tools. Git for
-Windows also ships a `link.exe` that shadows the MSVC linker. Build with
-`cargo +stable-x86_64-pc-windows-gnu`, or make that toolchain the default:
+**MinGW-w64 is required**, and it is pinned for you by two committed files, so
+`cargo build` works with no extra flags:
 
+| File | Purpose |
+| --- | --- |
+| `rust-toolchain.toml` | Selects the GNU toolchain, so target and host agree |
+| `.cargo/config.toml` | Pins the GNU target and uses `gcc` as the linker |
+
+Both are needed. Pinning the target alone is not enough: build scripts and
+proc-macros are compiled for the *host* with whichever toolchain is active, so on
+a machine defaulting to MSVC the host half still invokes the MSVC linker and the
+build fails.
+
+This also avoids a Windows trap: Git for Windows ships its own `link.exe`, which
+shadows the MSVC linker and makes linking fail with `link: extra operand`.
+
+The only prerequisite is a MinGW-w64 `gcc` on `PATH`; `rustup` installs the
+toolchain itself on the first `cargo` invocation. If `gcc` lives elsewhere, point
+the linker at it:
+
+```toml
+[target.x86_64-pc-windows-gnu]
+linker = "C:/path/to/mingw64/bin/gcc.exe"
 ```
-rustup default stable-x86_64-pc-windows-gnu
-```
 
-Delete `.cargo/config.toml` to build with MSVC instead.
+Building with MSVC is not supported.
 
 ## Usage
 
